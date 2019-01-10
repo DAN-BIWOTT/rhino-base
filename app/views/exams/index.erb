@@ -1,0 +1,123 @@
+<%= render 'dashboards/hNavBar' %>
+<%= render 'dashboards/vNavBar' %>
+<!-- add content here -->
+      <!-- start page content -->
+      <div class="page-content-wrapper">
+        <div class="page-content">
+          <div class="page-bar">
+            <div class="page-title-breadcrumb">
+              <div class=" pull-left">
+                <div class="page-title">Exams</div>
+              </div>
+              <ol class="breadcrumb page-breadcrumb pull-right">
+                <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Exams</a>&nbsp;<i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">Classes</li>
+              </ol>
+            </div>
+          </div>
+          <!-- add content here --> 
+        <div class="col-md-12 col-sm-12">
+                      <div class="card card-box">
+                        <div class="card-head">
+                          <header>School Exams</header>
+                          <div class="tools">
+                            <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                            <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                            <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                          </div>
+                        </div>
+                        <div class="card-body " id="bar-parent">
+                          <div class="row">
+                            <div class="col-md-3 col-sm-3 col-3">
+                              <ul class="nav nav-tabs tabs-left">
+                                <li class="nav-item">
+                                  <a href="#HOME_" data-toggle="tab" class=""> Home </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a href="#analysis" data-toggle="tab" class=""> Analysis </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a href="#trend" data-toggle="tab" class=""> Trend </a>
+                                </li>
+                               
+                              </ul>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-9">
+                              <div class="tab-content">
+                                <div class="tab-pane active show" id="HOME_">
+                                  <div class="col-sm-12">
+                                      <div class="panel">
+                                        <header class="panel-heading panel-heading-blue">
+                                          Home </header>
+                                        <div class="panel-body">
+                                          <!-- add action buttons -->
+                                        <%= form_with scope: :choice, url: exams_intheory_path, local: true do |s| %>
+                                        <div class="card-body " id="bar-parent10">
+                                             <form class="form-horizontal form-group"> 
+                                                 <div class="form-group row">
+                                                     <div class="col-lg-6 col-md-6">
+                                                      <label class="control-label">Class</label>
+                                                         <%= s.select(:switch,options_for_select([['class 1','1'],['class 2','2'],['class 3','3'],['class 4','4'],['class 5','5'],['class 6','6'],['class 7','7'],['class 8','8'],['nursery 1','9'],['nursery 2','10'],['nursery 3','11']]),:class=>'form-control  select2') %>
+                                                     </div>
+                                                     <div class="col-lg-6 col-md-6">
+                                                      <label class="control-label">Term</label>
+                                                         <%= s.select(:term,options_for_select([['Term 1','TM1'],['Term 2','TM2'],['Term 3','TM3']]),:class=>'form-control  select2') %>
+                                                     </div>
+                                                 </div>
+                                                 <div class="row">
+                                                   <div class="col-md-6 col-lg-6 col-sm-12">
+                                                      <%= s.label :Year  %>
+                                                     <%= s.text_field :year %>
+                                                   </div>
+                                                 </div>
+                                             </form>
+                                             <div class="row">
+                                                   <div class="col-md-6 col-lg-6 col-sm-12">
+                                                     <%= s.submit('Request',:method=>:post,:action=>"intheory",:class=>'btn purple bgcolor btn-outline m-b-10') %>
+                                             <%= link_to 'Add Results', new_exam_path,:class=>'btn blue-bgcolor btn-outline m-b-10' %>
+                                                   </div>
+                                                 </div>
+                                              </div>
+                                          <% end %>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="analysis">
+                                  <div class="col-sm-12">
+                                      <div class="panel">
+                                        <header class="panel-heading panel-heading-blue">
+                                          Analysis</header>
+                                        <div class="panel-body">
+                                          <!-- add action buttons -->
+                                          
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="trend">
+                                 <div class="col-sm-12">
+                                      <div class="panel">
+                                        <header class="panel-heading panel-heading-blue">
+                                          Trends </header>
+                                        <div class="panel-body">
+                                          <!-- add action buttons -->
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+      </div>
+   </div>
+      <!-- end page content -->
+<!-- ##################################################################### -->
+<%= render 'dashboards/chat' %>
+<%= render 'dashboards/footer' %>
