@@ -155,7 +155,6 @@ iframe {
 }
 .page-background{
 	background-image: url(image_path('bg-01.jpg'));
-  opacity: 1;
 }
 .container-login100::before {
   content: "";
@@ -282,7 +281,7 @@ iframe {
   font-size: 22px;
   color: #fff;
 
-  content: attr(data-placeholder); 
+  content: attr(data-placeholder);
   display: block;
   width: 100%;
   position: absolute;

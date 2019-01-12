@@ -146,7 +146,8 @@
                                               <div class="form-group row">
                                                 <label class="control-label col-md-3">Total
                                                   <span class="required" aria-required="true"> * </span>
-                                                </label><button class="btn btn-info btn-sm btn-info-outline" onclick="" type="button"> calculate</button>
+                                                </label>
+                                                <button class="btn btn-info btn-sm btn-info-outline" href="javascript:void(0)" onclick="calculate();" type="button"> calculate</button>
                                                 <div class="col-md-3">
                                                   <%= form.text_field :results,:class=>'form-control input-height',:id=>'results',readOnly:true %>
                                                 </div>
@@ -166,11 +167,6 @@
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="tab2">
-                <div class="row">
-                
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -180,4 +176,18 @@
   <!-- end page content -->
 <% end %>
 <%= render 'dashboards/chat' %>
+<script>
+  
+function calculate() {
+  var math = Number(jQuery('#math').val());
+  var english = Number(jQuery('#english').val());
+  var kiswahili = Number(jQuery('#kiswahili').val());
+  var science = Number(jQuery('#science').val());
+  var social_studies = Number(jQuery('#social_studies').val());
+  var CRE = Number(jQuery('#CRE').val());
+  
+  var total = (math + english + kiswahili + science + social_studies + CRE);
+  jQuery('#results').val(total);
+}
+</script>
 <%= render 'dashboards/footer' %>     
