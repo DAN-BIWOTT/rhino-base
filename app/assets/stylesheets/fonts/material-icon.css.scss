@@ -4,12 +4,12 @@
        font-family: 'Material Icons';
        font-style: normal;
        font-weight: 400;
-       src:font-url(/assets/MaterialIcons-Regular); /* For IE6-8 */
-       src: local('/assets/Material Icons'),
-            local('/assets/MaterialIcons-Regular'),
-            url(/assets/MaterialIcons-Regular.woff2) format('woff2'),
-            url(/assets/MaterialIcons-Regular.woff) format('woff'),
-            url(/assets/MaterialIcons-Regular.ttf) format('truetype');
+       src:font_url('MaterialIcons-Regular'); /* For IE6-8 */
+       src: local('Material Icons'),
+            local('MaterialIcons-Regular'),
+            font_url('MaterialIcons-Regular.woff2') format('woff2'),
+            font_url('MaterialIcons-Regular.woff') format('woff'),
+            font_url('MaterialIcons-Regular.ttf') format('truetype');
     }
 
     .material-icons {
