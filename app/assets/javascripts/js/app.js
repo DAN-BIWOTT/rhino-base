@@ -1,9 +1,3 @@
-/**
- *  Document   : app.js
- *  Author     : redstar
- *  Description: Core script to handle the entire theme and core functions
- *
- **/
 var App = function() {
 
     // IE mode
@@ -12,15 +6,6 @@ var App = function() {
     var isIE10 = false;
 
     var resizeHandlers = [];
-
-    var assetsPath = '';
-
-    var globalImgPath = 'img/';
-
-    var globalPluginsPath = 'global/plugins/';
-
-    var globalCssPath = 'css/';
-
     /************* Setting for IE ****************/
     var handleInit = function() {
 
@@ -747,7 +732,7 @@ var App = function() {
                 $('body').append('<div class="page-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>');
             } else {
                 $('.page-loading').remove();
-                $('body').append('<div class="page-loading"><img src="' + this.getGlobalImgPath() + 'loading-spinner-grey.gif"/>&nbsp;&nbsp;<span>' + (options && options.message ? options.message : 'Loading...') + '</span></div>');
+                $('body').append('<div class="page-loading"><%= image_tag(\'loading-spinner-grey.gif\')%>&nbsp;&nbsp;<span>' + (options && options.message ? options.message : 'Loading...') + '</span></div>');
             }
         },
 
@@ -804,26 +789,6 @@ var App = function() {
         // check IE9 mode
         isIE9: function() {
             return isIE9;
-        },
-
-        getAssetsPath: function() {
-            return assetsPath;
-        },
-
-        setAssetsPath: function(path) {
-            assetsPath = path;
-        },
-
-        setGlobalImgPath: function(path) {
-            globalImgPath = path;
-        },
-
-        getGlobalImgPath: function() {
-            return assetsPath + globalImgPath;
-        },
-
-        getGlobalCssPath: function() {
-            return assetsPath + globalCssPath;
         },
 
         getResponsiveBreakpoint: function(size) {

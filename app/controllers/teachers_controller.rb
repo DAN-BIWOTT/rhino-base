@@ -29,6 +29,8 @@ class TeachersController < ApplicationController
 
   def new
   	@teacher = current_user.teachers.build
+    @departments = Department.all()
+    @department = current_user.departments
   end
 
   def update
@@ -51,7 +53,7 @@ class TeachersController < ApplicationController
   private
 
   def teacher_params
-  	params.require(:teacher).permit(:firstName,:lastName,:email,:joinDate,:designation,:department,:gender,:phoneNumber,:birthDate,:address,:image,:education)
+  	params.require(:teacher).permit(:firstName,:lastName,:email,:joinDate,:designation,:dep_id,:gender,:phoneNumber,:birthDate,:address,:image,:education)
   end
 
 end

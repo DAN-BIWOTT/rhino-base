@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_07_141917) do
+ActiveRecord::Schema.define(version: 2019_01_12_175544) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", null: false
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_01_07_141917) do
     t.integer "math", default: 0
     t.integer "CRE", default: 0
     t.integer "student_id"
-    t.boolean "did_exam"
+    t.boolean "did_exam", default: false
   end
 
   create_table "libraries", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -135,7 +135,6 @@ ActiveRecord::Schema.define(version: 2019_01_07_141917) do
     t.text "lastName"
     t.string "email"
     t.date "joinDate"
-    t.string "password_digest"
     t.text "designation"
     t.text "department"
     t.text "gender"
@@ -147,6 +146,7 @@ ActiveRecord::Schema.define(version: 2019_01_07_141917) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "dep_id"
     t.index ["email"], name: "index_teachers_on_email", unique: true
   end
 

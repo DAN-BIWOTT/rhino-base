@@ -52,7 +52,9 @@
 							<!-- END SIDEBAR USER TITLE -->
 							<!-- SIDEBAR BUTTONS -->
 							<div class="profile-userbuttons">
-	<%= link_to "Log out",destroy_user_session_path,method: :DELETE,:class=>'btn btn-circle red btn-sm' %>
+								<div class="col-md-6">
+<%= link_to "Change Password", edit_user_password_path,method: :GET,:class=>'btn btn-circle btn-info btn-sm' %>	
+								</div>
 							</div>
 							<!-- END SIDEBAR BUTTONS -->
 						</div>

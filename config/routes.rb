@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
-  devise_scope :user do get "/auth/logout" => "devise/sessions#destroy" end
-  
+  devise_scope :user do get "/auth/logout" => "devise/sessions#destroy" 
+                        get "/auth/secret/edit" => "devise/passwords#edit"
+                          end
+  namespace :api do
+    namespace :v1 do
+      resources :students
+    end
+  end
+
 resources :teachers,:subjects,:staffs,:students,:exams,:departments,:holidays,:librarys,:staffs,:dashboards
 
   get 'events/index'

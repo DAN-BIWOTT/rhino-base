@@ -1,5 +1,6 @@
 class Teacher < ApplicationRecord
   belongs_to :user
+  belongs_to :department
   has_one_attached :image
   
   validates  :firstName,presence: true

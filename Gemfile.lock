@@ -237,6 +237,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   duktape
+  httparty
   jbuilder (~> 2.5)
   jquery-migrate-rails (~> 1.2, >= 1.2.1)
   jquery-rails

@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: rhinoBaseSite
+  database: rhinoBaseSite_production
   username: rhinoBaseSite
   password: <%= ENV['RHINOBASESITE_DATABASE_PASSWORD'] %>

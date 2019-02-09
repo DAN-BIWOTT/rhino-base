@@ -38,6 +38,3 @@ Rails.application.config.assets.precompile += %w( js/pages/table/table_data.js)
 Rails.application.config.assets.precompile += %w(plugins/material-datetimepicker/moment-with-locales.min.js)
 Rails.application.config.assets.precompile += %w(plugins/material-datetimepicker/bootstrap-material-datetimepicker.js)
 Rails.application.config.assets.precompile += %w(plugins/material-datetimepicker/datetimepicker.js)
-Rails.application.config.assets.precompile += %w( icons-lte-ie7.js )
-
-

@@ -13,7 +13,7 @@ class StaffsController < ApplicationController
   def show
   end
 
-  # GET /staffs/new
+  # GET /staffs/new 
   def new
     @staff = current_user.staffs.build
   end
