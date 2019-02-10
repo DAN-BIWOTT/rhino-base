@@ -12,6 +12,7 @@ module RhinoBaseSite
     config.load_defaults 5.2
     config.assets.initialize_on_precompile = true
     config.serve_static_assets = true
+    config.api_controllers_matcher="#{Rails.root}/app/controllers/api/v1/*.rb"
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
